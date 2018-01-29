@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ms-consumer/ms-consumer.iml" filepath="$PROJECT_DIR$/ms-consumer/ms-consumer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ms-provider-user/ms-provider-user.iml" filepath="$PROJECT_DIR$/ms-provider-user/ms-provider-user.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/spcloud_dk.iml" filepath="$PROJECT_DIR$/.idea/spcloud_dk.iml" />
+    </modules>
+  </component>
+</project>
