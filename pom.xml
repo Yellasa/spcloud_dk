@@ -7,6 +7,9 @@
     <modules>
         <module>ms-consumer</module>
         <module>ms-provider-user</module>
+        <module>ms-discovery-eureka</module>
+        <module>ms-discovery-eureka-authen</module>
+        <module>ms-discovery-eureka-ha</module>
     </modules>
     <name>parent</name>
     <url>http://maven.apache.org</url>
