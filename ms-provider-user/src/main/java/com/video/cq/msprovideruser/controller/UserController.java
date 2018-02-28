@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 /**
  * @Author: yangting
  * @Description: 一句话描述这个类和方法
@@ -24,5 +26,11 @@ public class UserController
     public User findById(@PathVariable Long id){
         User user = userRepository.findOne(id);
         return user;
+    }
+
+    @GetMapping("/{name}")
+    public List<User> findById(@PathVariable String name){
+        List<User> users = userRepository.findAll();
+        return users;
     }
 }
