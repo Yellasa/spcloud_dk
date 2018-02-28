@@ -1,0 +1,17 @@
+# Created by .ignore support plugin (hsz.mobi)
+target
+*.class
+.settings
+.classpath
+.project
+
+### FOR IDEA
+.idea
+*.iml
+
+catalina.home_IS_UNDEFINED
+*.war
+
+mvnw
+mvnw.cmd
+.mvn
