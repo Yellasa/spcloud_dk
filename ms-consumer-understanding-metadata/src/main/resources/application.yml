@@ -10,8 +10,5 @@ eureka:
         serviceUrl:
             defaultZone: http://user:password123@peer1:8761/eureka/
 
-    instance:
-      perfer-ip-address: true
-      # 手动指定服务ip
-      ip-address: 127.0.0.1
+
 user.userServiceUrl: http://ms-provider-user/

@@ -1,10 +1,15 @@
 package com.video.cq.msconsumer.controller;
 
-import com.video.cq.msconsumer.feign.UserFeignClient;
 import com.video.cq.msconsumer.pojo.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.cloud.client.ServiceInstance;
+import org.springframework.cloud.client.discovery.DiscoveryClient;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
+
+import java.util.List;
 
 /**
  * @Author: yangting
@@ -15,27 +20,22 @@ import org.springframework.web.client.RestTemplate;
 public class MovieController
 {
 
+    public static final String MS_PROVIDER_USER = "ms-provider-user";
     @Autowired
     private RestTemplate restTemplate;
 
 
     @Autowired
-    private UserFeignClient userFeignClient;
-
+    private DiscoveryClient discoveryClient;
 
     @GetMapping("/user/{id}")
     public User findById(@PathVariable Long id){
         return restTemplate.getForObject("http://localhost:8001/"+id,User.class);
     }
 
-    @GetMapping("/feign/user/{id}")
-    public User findFeignById(@PathVariable Long id) {
-        return this.userFeignClient.findById(id);
-    }
-
-    @PostMapping("/feign/post")
-    public User post(@RequestBody User user){
-        return this.userFeignClient.post(user);
+    @GetMapping("/user-instance")
+    public List<ServiceInstance> showInfo(){
+        return this.discoveryClient.getInstances(MS_PROVIDER_USER);
     }
 
 }

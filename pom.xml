@@ -6,7 +6,9 @@
     <packaging>pom</packaging>
     <modules>
         <module>ms-consumer</module>
+        <module>ms-consumer-understanding-metadata</module>
         <module>ms-provider-user</module>
+        <module>ms-provider-user-my-metadata</module>
         <module>ms-discovery-eureka</module>
         <module>ms-discovery-eureka-authen</module>
         <module>ms-discovery-eureka-ha</module>

@@ -3,7 +3,9 @@ package com.video.cq.msprovideruser.controller;
 import com.video.cq.msprovideruser.dao.UserRepository;
 import com.video.cq.msprovideruser.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
@@ -30,16 +32,5 @@ public class UserController
     public List<User> findById(@PathVariable String name){
         List<User> users = userRepository.findAll();
         return users;
-    }
-    @PatchMapping("/user")
-    public User update(@RequestBody  User user){
-        User save = userRepository.save(user);
-        return save;
-    }
-
-    @PostMapping("/post")
-    public User save(@RequestBody User user){
-        User save = userRepository.save(user);
-        return save;
     }
 }
