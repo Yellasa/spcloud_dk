@@ -26,6 +26,9 @@ eureka:
       defaultZone: http://peer2:8762/eureka/
     fetch-registry: false
     register-with-eureka: false
+  #  关闭自我保护  当服务下线时，就down
+  server:
+    enable-self-preservation: false
 ---
 spring:
   profiles: peer2
@@ -43,3 +46,6 @@ eureka:
     register-with-eureka: false
     fetch-registry: false
 
+  #  关闭自我保护  当服务下线时，就down
+  server:
+    enable-self-preservation: false
